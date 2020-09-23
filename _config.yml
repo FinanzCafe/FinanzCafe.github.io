@@ -23,8 +23,8 @@ static_email: "https://formspree.io/your-email@domain.com"
 # Analytics
 analytics:
   provider: true # false (default), "google", "google-universal", "custom"
-#  google:
-#    tracking_id: UA-asdf
+  google:
+    tracking_id: UA-178733706-1
   facebookpixel:
     tracking_id: 716482995548219
 
