@@ -29,7 +29,8 @@
   {% if page.amp-social-share %}
   <script custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async=""></script>
   {% endif %}
-  {% if page.amp-date-countdown %}
+  {% assign events = site.events | where_exp: "post", "post.date >= site.time" %}
+  {% if page.amp-date-countdown and events.size > 0%}
   <script custom-element="amp-date-countdown" src="https://cdn.ampproject.org/v0/amp-date-countdown-0.1.js" async=""></script>
   {% endif %}
   {% if page.amp-mustache %}

@@ -64,6 +64,8 @@ amp-form: true
     {{ content }}
   </section>
 
+  {% assign events = site.events | where_exp: "post", "post.date >= site.time" %}
+  {% if events.size > 0 %}
   <!-- Start Image without Caption -->
   <div class="banner-container m-auto">
     <figure class="ampstart-image-fullpage-hero m0 mb4 banner-background absolute left-0">
@@ -93,7 +95,6 @@ amp-form: true
     </div>
 
     <div class="m3 flex flex-wrap">
-      {% assign events = site.events | where_exp: "post", "post.date >= site.time" %}
       {% for post in events limit:3 %}
       <div class="width-200px ml-auto mr-auto mb1 mt1">
 
@@ -152,12 +153,10 @@ amp-form: true
       </div>
       {% endfor %}
       </div>
+  </section>
+  {% endif %}
 
-
-    </div>
-
-
-    <!-- Start Image without Caption -->
+  <!-- Start Image without Caption -->
     <div class="banner-container m-auto">
       <figure class="ampstart-image-fullpage-hero m0 mb4 banner-background absolute left-0">
         <amp-img height="300" alt="Wann startest du, deine eigenen Träume wahr werden zu lassen?" layout="fixed-height"
